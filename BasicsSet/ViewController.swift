@@ -217,8 +217,17 @@ class ViewController: UIViewController {
             }
             return false
         }
-        let result = hasAnyMatches(list: [1, 23, 4, -10], condition: lessThanTen)
+        
+        let numbers = [1, 23, 4, -10]
+        let result = hasAnyMatches(list: numbers, condition: lessThanTen)
         print(result)
+        
+        numbers.map({(number: Int) -> Int in
+            let result = number % 2;
+            return result == 1 ? 0 : 1
+        })
+//        let mapResult = numbers.map({number in 3 * number})
+        
     }
 
     override func didReceiveMemoryWarning() {
