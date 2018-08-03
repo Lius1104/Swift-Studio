@@ -232,29 +232,44 @@ class ViewController: UIViewController {
          
          let sortNumbers = numbers.sorted { $0 > $1 }
          print(sortNumbers)
+         
+         let shape = Shape()
+         shape.numberOfSides = 3
+         let simpleDescription = shape.simpleDescription()
+         print(simpleDescription)
+         shape.countDescription(count: 1104)
+         
+         let test = Square(sideLength: 4, name: "Lius")
+         print(test.area())
+         print(test.simpleDescription())
+         
+         let testCircle = Circle(radius: 1, name: "Lius")
+         print(testCircle.area())
+         print(testCircle.simpleDescription())
+         
+         let triangle = EquilateralTriangle(sideLength: 3.1, name: "Lius")
+         print(triangle.perimeter)
+         triangle.perimeter = 9.9
+         print(triangle.sideLength)
+         
+         let triangleAndSquare = TriangleAndSquare(size: 10, name: "another test shape")
+         print(triangleAndSquare.square.sideLength)
+         print(triangleAndSquare.triangle.sideLength)
+         triangleAndSquare.square = Square(sideLength: 50, name: "larger square")
+         print(triangleAndSquare.triangle.sideLength)
         */
         
         
-        let shape = Shape()
-        shape.numberOfSides = 3
-        let simpleDescription = shape.simpleDescription()
-        print(simpleDescription)
-        shape.countDescription(count: 1104)
+        let optionalSquare: Square? = Square(sideLength: 3.5, name: "Lius")
+        let sideOfLength = optionalSquare?.sideLength
+        print(sideOfLength!)
         
-        let test = Square(sideLength: 4, name: "Lius")
-//        test.area()
-        print(test.area())
-//        test.simpleDescription()
-        print(test.simpleDescription())
-        
-        let testCircle = Circle(radius: 1, name: "Lius")
-        print(testCircle.area())
-        print(testCircle.simpleDescription())
-        
-        let triangle = EquilateralTriangle(sideLength: 3.1, name: "Lius")
-        print(triangle.perimeter)
-        triangle.perimeter = 9.9
-        print(triangle.sideLength)
+        let ace = Rank.ace
+        let aceRawValue = ace.simpleDescription()
+        print(aceRawValue)
+        let secondRank = Rank.queen
+        let result = ace.compress(first: ace, second: secondRank)
+        print(result)
         
     }
 
@@ -266,6 +281,33 @@ class ViewController: UIViewController {
 
 }
 
+enum Rank: Int {
+    case ace = 1
+    case two, three, four, five, six, seven, eight, nine, ten
+    case jack, queen, king
+    func simpleDescription() -> String {
+        switch self {
+        case .ace:
+            return "ace"
+        case .jack:
+            return "jack"
+        case .queen:
+            return "queen"
+        case .king:
+            return "king"
+        default:
+            return String(self.rawValue)
+        }
+    }
+    
+    func compress(first: Rank, second: Rank) -> String {
+        if first.rawValue > second.rawValue {
+            return first.simpleDescription()
+        } else {
+            return second.simpleDescription()
+        }
+    }
+}
 
 class Shape {
     var numberOfSides = 0
@@ -279,7 +321,6 @@ class Shape {
     func countDescription(count: Int) {
         print("the count is \(count).")
     }
-    
 }
 
 class NamedShape {
@@ -297,7 +338,6 @@ class NamedShape {
     }
     
 }
-
 
 class Square: NamedShape {
     var sideLength: Double
@@ -357,4 +397,21 @@ class EquilateralTriangle: NamedShape {
         return "An equilateral triangele with sides of length \(sideLength)."
     }
     
+}
+
+class TriangleAndSquare {
+    var triangle: EquilateralTriangle {
+        willSet {
+            square.sideLength = newValue.sideLength
+        }
+    }
+    var square: Square {
+        willSet {
+            triangle.sideLength = newValue.sideLength
+        }
+    }
+    init(size: Double, name: String) {
+        square = Square(sideLength: size, name: name)
+        triangle = EquilateralTriangle(sideLength: size, name: name)
+    }
 }
