@@ -147,7 +147,7 @@ class ViewController: UIViewController {
          total += i;
          }
          print(total)
-         */
+ 
         
         func greet(person: String, day: String) -> String {
             return "Hello, \(person)! today is \(day)."
@@ -222,11 +222,39 @@ class ViewController: UIViewController {
         let result = hasAnyMatches(list: numbers, condition: lessThanTen)
         print(result)
         
-        numbers.map({(number: Int) -> Int in
-            let result = number % 2;
-            return result == 1 ? 0 : 1
-        })
-//        let mapResult = numbers.map({number in 3 * number})
+//        numbers.map({(number: Int) -> Int in
+//            let result = number * 3;
+//            return result
+//        })
+        
+         let mapResult = numbers.map({number in 3 * number})
+         print(mapResult)
+         
+         let sortNumbers = numbers.sorted { $0 > $1 }
+         print(sortNumbers)
+        */
+        
+        
+        let shape = Shape()
+        shape.numberOfSides = 3
+        let simpleDescription = shape.simpleDescription()
+        print(simpleDescription)
+        shape.countDescription(count: 1104)
+        
+        let test = Square(sideLength: 4, name: "Lius")
+//        test.area()
+        print(test.area())
+//        test.simpleDescription()
+        print(test.simpleDescription())
+        
+        let testCircle = Circle(radius: 1, name: "Lius")
+        print(testCircle.area())
+        print(testCircle.simpleDescription())
+        
+        let triangle = EquilateralTriangle(sideLength: 3.1, name: "Lius")
+        print(triangle.perimeter)
+        triangle.perimeter = 9.9
+        print(triangle.sideLength)
         
     }
 
@@ -238,3 +266,95 @@ class ViewController: UIViewController {
 
 }
 
+
+class Shape {
+    var numberOfSides = 0
+    let countOfSides = 0
+    
+    
+    func simpleDescription() -> String {
+        return "A Shape with \(numberOfSides) sides."
+    }
+    
+    func countDescription(count: Int) {
+        print("the count is \(count).")
+    }
+    
+}
+
+class NamedShape {
+    var numberOfSides: Int = 0
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+    
+    func simpleDescription() -> String {
+        return "A shape with \(numberOfSides) sides."
+    }
+    
+    deinit {
+    }
+    
+}
+
+
+class Square: NamedShape {
+    var sideLength: Double
+    
+    init(sideLength: Double, name: String) {
+        self.sideLength = sideLength
+        super.init(name: name)
+        numberOfSides = 4
+        
+    }
+    
+    func area() -> Double {
+        return sideLength * Double(numberOfSides)
+    }
+    
+    override func simpleDescription() -> String {
+        return "A square with sides of length \(sideLength)."
+    }
+}
+
+class Circle: NamedShape {
+    var radius: Double = 0
+    init(radius: Double, name: String) {
+        super.init(name: name)
+        self.radius = radius
+    }
+    
+    func area() -> Double {
+        return 2 * Double.pi * radius
+    }
+    
+    override func simpleDescription() -> String {
+        return "A circle."
+    }
+    
+}
+
+class EquilateralTriangle: NamedShape {
+    var sideLength: Double = 0.0
+    
+    init(sideLength: Double, name: String) {
+        self.sideLength = sideLength
+        super.init(name: name)
+        numberOfSides = 3
+    }
+    
+    var perimeter: Double {
+        get {
+            return 3 * sideLength
+        }
+        set {
+            sideLength = newValue / 3.0
+        }
+    }
+    
+    override func simpleDescription() -> String {
+        return "An equilateral triangele with sides of length \(sideLength)."
+    }
+    
+}
