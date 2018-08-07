@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		530154202118425800D5727B /* BasicsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5301541F2118425800D5727B /* BasicsVC.swift */; };
+		530154222119839A00D5727B /* BasicOperatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530154212119839A00D5727B /* BasicOperatorVC.swift */; };
 		53A8E0612112ADDC00F6CE6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8E0602112ADDC00F6CE6A /* AppDelegate.swift */; };
 		53A8E0632112ADDC00F6CE6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8E0622112ADDC00F6CE6A /* ViewController.swift */; };
 		53A8E0662112ADDC00F6CE6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A8E0642112ADDC00F6CE6A /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5301541F2118425800D5727B /* BasicsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicsVC.swift; sourceTree = "<group>"; };
+		530154212119839A00D5727B /* BasicOperatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicOperatorVC.swift; sourceTree = "<group>"; };
 		53A8E05D2112ADDC00F6CE6A /* SwiftStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A8E0602112ADDC00F6CE6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53A8E0622112ADDC00F6CE6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 				53A8E09B2112B50100F6CE6A /* Assets.xcassets */,
 				53A8E09D2112B50100F6CE6A /* LaunchScreen.storyboard */,
 				53A8E0A02112B50100F6CE6A /* Info.plist */,
+				5301541F2118425800D5727B /* BasicsVC.swift */,
+				530154212119839A00D5727B /* BasicOperatorVC.swift */,
 			);
 			path = BasicsSet;
 			sourceTree = "<group>";
@@ -466,6 +472,8 @@
 			files = (
 				53A8E0972112B50000F6CE6A /* ViewController.swift in Sources */,
 				53A8E0952112B50000F6CE6A /* AppDelegate.swift in Sources */,
+				530154202118425800D5727B /* BasicsVC.swift in Sources */,
+				530154222119839A00D5727B /* BasicOperatorVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

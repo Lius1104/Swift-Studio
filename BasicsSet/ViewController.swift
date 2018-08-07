@@ -257,20 +257,184 @@ class ViewController: UIViewController {
          print(triangleAndSquare.triangle.sideLength)
          triangleAndSquare.square = Square(sideLength: 50, name: "larger square")
          print(triangleAndSquare.triangle.sideLength)
+         
+         let optionalSquare: Square? = Square(sideLength: 3.5, name: "Lius")
+         let sideOfLength = optionalSquare?.sideLength
+         print(sideOfLength!)
+         
+         // enum
+         let ace = Rank.ace
+         let aceRawValue = ace.simpleDescription()
+         print(aceRawValue)
+         let secondRank = Rank.queen
+         let result = ace.compress(first: ace, second: secondRank)
+         print(result)
+         
+         if let aceRank = Rank(rawValue: 1) {
+         print(aceRank.simpleDescription())//ace
+         }
+         
+         let nineRank = Rank(rawValue: 9)
+         if nineRank != nil {
+         let nineRankDescription = nineRank?.simpleDescription()
+         print(nineRankDescription)//Optional("9")
+         }
+         
+         let hearts = Suit.hearts
+         let heartDescription = hearts.simpleDescription()
+         print(heartDescription)//hearts
+         
+         let spadesSuit = Suit.spades
+         let clubsSuit: Suit = .clubs
+         let colorSpades = spadesSuit.color()
+         let colorClubs = clubsSuit.color()
+         
+         print(colorSpades, colorClubs)//blank blank
+         
+         let success = ServerResponse.result("Lius", "Sara")
+         let failure = ServerResponse.failure("Error: 404")
+         switch failure {
+         case let .result(lius, sara):
+         print("My name is \(lius), you can also call me \(sara)")
+         case let .failure(error):
+         print("Failure:\(error)")
+         case let .other(otherMsg):
+         print("other is \(otherMsg)")
+         }
+         
+         // 结构体
+         let ace = Rank.ace
+         let suit = Suit.hearts
+         
+         let card = Card(rank: ace, suit: suit)
+         let cardDescription = card.simpleDescription()
+         print(cardDescription)//The ace of hearts
+         
+         func createFullCards() -> ([Card]) {
+         var cards = [Card]()
+         for rank in Rank.allValue {
+         for suit in Suit.allValue {
+         let item = Card(rank: rank, suit: suit)
+         cards.append(item)
+         }
+         }
+         return cards
+         }
+         
+         let cards = createFullCards()
+         
+         //协议 and 扩展
+         let a = SimpleClass()
+         a.adjust()
+         let aDescription = a.simpleDescription
+         print(aDescription)
+         
+         var b = SimpleStructure()
+         b.adjust()
+         let bDescription = b.simpleDescription
+         print(bDescription)
+         
+         var number = 7
+         print(number.simpleDescription)
+         number.adjust()
+         print(number.simpleDescription)
+         
+         let absolute = -12.3
+         print(absolute.absoluteValue)
+         
+         /**
+         *  You can use a protocol name just like any other named type—for example, to create a collection of objects that have different types but that all conform to a single protocol. When you work with values whose type is a protocol type, methods outside the protocol definition are not available.
+         *  Even though the variable protocolValue has a runtime type of SimpleClass, the compiler treats it as the given type of ExampleProtocol. This means that you can’t accidentally access methods or properties that the class implements in addition to its protocol conformance.
+         */
+         let protocolValue: ExampleProtocol = a
+         print(protocolValue.simpleDescription)
+         
+         // 异常处理
+         do {
+         let result = try send(job: 12, toPrinter: "other")
+         print(result)
+         } catch PrintError.onFire {
+         print("error")
+         } catch let printerError as PrintError {
+         print("Error is Print Error, \(printerError).")
+         } catch {
+         print("other error: \(error)")
+         }
+         
+         let printerSuccess = try? send(job: 1024, toPrinter: "other")
+         let printerFailure = try? send(job: 512, toPrinter: "Never Has Toner")//对特别指出的异常不进行处理，直接返回nil
+         print(printerSuccess)
+         print(printerFailure)
+         
+         fridgeContains("eggs")
+         
+         // 泛型
+         let result = makeArray(repeating: "Lius", numberOfItems: 4)
+         print(result)
+         
+         var optionalValue: OptionalValue<Int> = .none
+         optionalValue = .some(100)
+         print(optionalValue)
+         
+         let result = anyCommonElements([1, 2, 3], [4])
+         print(result)
+         let result = anyCommonElements(["Lius", "Sara", "Jack"], ["Lius"])
+         print(result)
         */
         
-        
-        let optionalSquare: Square? = Square(sideLength: 3.5, name: "Lius")
-        let sideOfLength = optionalSquare?.sideLength
-        print(sideOfLength!)
-        
-        let ace = Rank.ace
-        let aceRawValue = ace.simpleDescription()
-        print(aceRawValue)
-        let secondRank = Rank.queen
-        let result = ace.compress(first: ace, second: secondRank)
-        print(result)
-        
+        let hexNum = AudioSample.min
+    }
+    
+    func send(job: Int, toPrinter printName: String) throws -> String {
+        if printName == "Never Has Toner" {
+            throw PrintError.noToner
+        }
+        if printName == "On fire" {
+            throw PrintError.onFire
+        }
+        if printName == "other" {
+            throw OtherPrintError.othetError
+        }
+        return "Job sent"
+    }
+
+    var fridgeIsOpen = false
+
+    var fridgeContent = ["milk", "eggs", "leftovers"]
+    func fridgeContains(_ food: String) {
+        fridgeIsOpen = true
+        print("fridgeIsOpen is \(fridgeIsOpen)")
+        defer {//在函数中的其他代码都执行完之后再执行，包括return
+            fridgeIsOpen = false
+            print("defer fridgeIsOpen is \(fridgeIsOpen)")
+        }
+        let result = fridgeContent.contains(food)
+        print("result is \(result)")
+        return
+    }
+    
+    func makeArray<Item>(repeating item: Item, numberOfItems: Int) -> [Item] {
+        var result = [Item]()
+        for _ in 0..<numberOfItems {
+            result.append(item)
+        }
+        return result
+    }
+    
+    func anyCommonElements<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> Array<T.Iterator.Element>
+        where T.Iterator.Element: Equatable, T.Iterator.Element == U.Iterator.Element {
+            // 泛型 可在 函数实现体之前指定要求列表，用 , 隔开， 泛型的类型，继承的父类，实现的协议等
+            var result = Array<T.Iterator.Element>()
+
+            for lhsItem in lhs {
+                for rhsItem in rhs {
+                    if lhsItem == rhsItem {
+                        result.append(lhsItem)
+                        break
+                    }
+                }
+            }
+            return result
     }
 
     override func didReceiveMemoryWarning() {
@@ -281,10 +445,106 @@ class ViewController: UIViewController {
 
 }
 
+enum OptionalValue<Wrapped> {
+    case none
+    case some(Wrapped)
+}
+
+enum PrintError: Error {
+    case outOfPaper
+    case noToner
+    case onFire
+}
+
+enum OtherPrintError: Error {
+    case othetError
+}
+
+protocol AbsoluteProtocol {
+    var absoluteValue: Double { get }
+}
+
+extension Double: AbsoluteProtocol {
+    var absoluteValue: Double {
+        return fabs(self)
+    }
+    
+}
+
+protocol ExampleProtocol {
+    var simpleDescription: String { get }
+    mutating func adjust()
+}
+
+extension Int: ExampleProtocol {
+    var simpleDescription: String {
+        return "the number is \(self)"
+    }
+    mutating func adjust() {
+        self += 42
+    }
+}
+
+enum SimpleEnumeration: ExampleProtocol {
+    case one, two, three
+    var simpleDescription: String {
+        get {
+            switch self {
+            case .one:
+                return "one"
+            case .two:
+                return "two"
+            case .three:
+                return "three"
+            }
+        }
+    }
+    mutating func adjust() {
+    }
+}
+
+struct SimpleStructure: ExampleProtocol {
+    var simpleDescription: String = "A simple structure"
+    var otherProperty: Int = 123
+    
+    mutating func adjust() {
+        simpleDescription += " (adjusted)"
+    }
+    
+}
+
+class SimpleClass: ExampleProtocol {
+    var simpleDescription: String = "A very simple class."
+    var otherProperty = 123
+    
+    func adjust() {
+        simpleDescription += "  Now 100% adjusted."
+    }
+}
+
+struct Card {
+    var rank: Rank
+    var suit: Suit
+    func simpleDescription() -> String {
+        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+    }
+    
+    
+}
+
+enum ServerResponse {
+    case result(String, String)
+    case failure(String)
+    case other(String)
+}
+
 enum Rank: Int {
     case ace = 1
     case two, three, four, five, six, seven, eight, nine, ten
     case jack, queen, king
+    
+    static let allValue = [ace, two, three, four, five, six, .seven, .eight, nine, ten, jack, queen, king]
+    
     func simpleDescription() -> String {
         switch self {
         case .ace:
@@ -305,6 +565,38 @@ enum Rank: Int {
             return first.simpleDescription()
         } else {
             return second.simpleDescription()
+        }
+    }
+}
+
+enum Suit {
+    case spades, hearts, diamonds, clubs
+    
+    static let allValue = [spades, hearts, diamonds, clubs]
+    
+    func simpleDescription() -> String {
+        switch self {
+        case .spades:
+            return "spades"
+        case .hearts:
+            return "hearts"
+        case .diamonds:
+            return "diamonds"
+        case .clubs:
+            return "clubs"
+//        default:
+//            <#code#>
+        }
+    }
+    
+    func color() -> String {
+        switch self {
+        case .clubs, .spades:
+            return "blank"
+        case .hearts, .diamonds:
+            return "red"
+//        default:
+//            <#code#>
         }
     }
 }
