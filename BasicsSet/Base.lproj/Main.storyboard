@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Basics-->
+        <!--BasicOperatorVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BasicOperatorVC" customModule="BasicsSet" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                             <constraint firstItem="Ug7-Ai-Gm3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wv0-yN-ce5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Basics" id="I42-vO-2bT"/>
+                    <navigationItem key="navigationItem" title="BasicOperatorVC" id="I42-vO-2bT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
