@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class BasicOperatorVC: UIViewController {
 
@@ -157,16 +158,63 @@ class BasicOperatorVC: UIViewController {
          let range = word.startIndex ... word.index(word.startIndex, offsetBy: 3)
          word.removeSubrange(range)
          print(word)
+         
+         //子字符串
+         var greeting: String = "Hello, world!"
+         print(greeting)
+         //        let index = greeting.firstIndex(of: ",") ?? greeting.endIndex//firstIndex(of: ) error
+         let index = greeting.index(greeting.startIndex, offsetBy: 5)
+         var subStr = greeting[..<index]
+         subStr += " Lius."
+         print(subStr)
+         print(greeting)
+         
+         let quotation = "We're a lot alike, you and I."
+         let sameQuotation = "We're a lot alike, you and I."
+         if quotation == sameQuotation {
+         print("These two strings are considered equal")
+         }
+         print(quotation.hasSuffix("."))
+         
+         let romeoAndJuliet = [
+         "Act 1 Scene 1: Verona, A public place",
+         "Act 1 Scene 2: Capulet's mansion",
+         "Act 1 Scene 3: A room in Capulet's mansion",
+         "Act 1 Scene 4: A street outside Capulet's mansion",
+         "Act 1 Scene 5: The Great Hall in Capulet's mansion",
+         "Act 2 Scene 1: Outside Capulet's mansion",
+         "Act 2 Scene 2: Capulet's orchard",
+         "Act 2 Scene 3: Outside Friar Lawrence's cell",
+         "Act 2 Scene 4: A street in Verona",
+         "Act 2 Scene 5: Capulet's mansion",
+         "Act 2 Scene 6: Friar Lawrence's cell"
+         ]
+         var count = 0
+         for item in romeoAndJuliet {
+         if item.hasPrefix("Act 1") {
+         count += 1
+         }
+         }
+         print(count)
+         
+         let dogString = "Dog‼🐶"
+         for codeUnit in dogString.utf8 {
+         print("\(codeUnit) ", terminator: "")
+         }
+         print("")
+         for codeUnit in dogString.utf16 {
+         print("\(codeUnit) ", terminator: "")
+         }
+         print("")
+         for scalar in dogString.unicodeScalars {
+         print("\(scalar.value) ", terminator: "")
+         }
+         print("")
+         for scalar in dogString.unicodeScalars {
+         print("\(scalar) ", terminator: "")
+         }
+         print("")
          */
-        
-        //子字符串
-        var greeting = "Hello, world!"
-//        let index = greeting.firstIndex(of: ",") ?? greeting.endIndex
-//        let subString = greeting.sub
-        
-//        let beginning = greeting[..<index]
-//        print(beginning)
-        
     }
     
     override func didReceiveMemoryWarning() {
