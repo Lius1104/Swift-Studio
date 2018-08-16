@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		530154202118425800D5727B /* BasicsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5301541F2118425800D5727B /* BasicsVC.swift */; };
 		530154222119839A00D5727B /* BasicOperatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530154212119839A00D5727B /* BasicOperatorVC.swift */; };
+		5356ED8C212553A300D16D62 /* ClosuresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356ED8B212553A300D16D62 /* ClosuresVC.swift */; };
 		53A8E0612112ADDC00F6CE6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8E0602112ADDC00F6CE6A /* AppDelegate.swift */; };
 		53A8E0632112ADDC00F6CE6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8E0622112ADDC00F6CE6A /* ViewController.swift */; };
 		53A8E0662112ADDC00F6CE6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A8E0642112ADDC00F6CE6A /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		5301541F2118425800D5727B /* BasicsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicsVC.swift; sourceTree = "<group>"; };
 		530154212119839A00D5727B /* BasicOperatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicOperatorVC.swift; sourceTree = "<group>"; };
+		5356ED8B212553A300D16D62 /* ClosuresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosuresVC.swift; sourceTree = "<group>"; };
 		53A8E05D2112ADDC00F6CE6A /* SwiftStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A8E0602112ADDC00F6CE6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53A8E0622112ADDC00F6CE6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				53DB21C02122E0B500C4E6BC /* CollectionTypesVC.swift */,
 				53DB21C22123CBFD00C4E6BC /* ControlFlowVC.swift */,
 				53DB21C421242B7700C4E6BC /* FunctionsVC.swift */,
+				5356ED8B212553A300D16D62 /* ClosuresVC.swift */,
 			);
 			path = BasicsSet;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				53DB21C521242B7700C4E6BC /* FunctionsVC.swift in Sources */,
 				53A8E0972112B50000F6CE6A /* ViewController.swift in Sources */,
 				53DB21C12122E0B500C4E6BC /* CollectionTypesVC.swift in Sources */,
+				5356ED8C212553A300D16D62 /* ClosuresVC.swift in Sources */,
 				53A8E0952112B50000F6CE6A /* AppDelegate.swift in Sources */,
 				530154202118425800D5727B /* BasicsVC.swift in Sources */,
 				530154222119839A00D5727B /* BasicOperatorVC.swift in Sources */,
