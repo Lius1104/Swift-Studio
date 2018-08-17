@@ -120,12 +120,29 @@ class ClosuresVC: UIViewController {
         // Autoclosures
         var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
         print(customersInLine.count)
-        let customerProvider = { customersInLine.remove(at: 0) }
+        let customerProvider = { customersInLine.remove(at: 0) }//闭包 () -> String, 没有参数，remove 的返回值是 String
         print(customersInLine.count)
-        
+        // 在调用 闭包 之前 remove 不会调用，所以 custonersInLine.count = 5
         print("Now serving \(customerProvider())!")
         print(customersInLine.count)
+        // 不使用 @autoclosure 显式调用闭包 { customersInLine.remove(at: 0) }
+        serve(customer: { customersInLine.remove(at: 0) })
+        print(customersInLine.count)
+        // 使用 @autoclosure 隐式调用闭包 可以像调用 String 参数一样调用 闭包
+        // 不要过度使用 @autoclosure 会增加上下文阅读难度
+        anotherServe(customer: customersInLine.remove(at: 0))
+        print(customersInLine.count)
         
+        print(customersInLine)
+        
+        collectCustomerProviders(customersInLine.remove(at: 0))
+        collectCustomerProviders(customersInLine.remove(at: 0))
+        
+        print("Collected \(customerProviders.count) closures.")
+        
+        for customerProvider in customerProviders {
+            print("Now serving \(customerProvider())")
+        }
         
         
     }
@@ -152,15 +169,22 @@ class ClosuresVC: UIViewController {
         return increment
     }
     
+    func serve(customer customerProvider: () -> String) {
+        print("Now Serving \(customerProvider())")
+    }
     
+    func anotherServe(customer customerProvider: @autoclosure () -> String) {
+        print("Now another serving \(customerProvider())")
+    }
     
 }
 
-// 转义闭包，关键字: @escaping
+// 转义闭包，关键字: @escaping 转义作用域
 // 使用 @escaping => 必须在闭包中明确使用 self
 // 方式 : 通过存储在定义在函数外部的变量中
 var completionHandlers: [() -> Void] = []
 func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void) {
+    //不使用 @escaping 关键字 completionHandler 的作用域只在function内，无法将 completionHandler 加入到 completionHandlers 数组中，使用 @escaping 后转义作用域可以将 completionHandler 加入到 completionHandlers 数组中
     completionHandlers.append(completionHandler)
 }
 func someFunctionWithNonescapngClosure(closure: () -> Void) {
@@ -181,5 +205,8 @@ class SomeClass {
 }
 
 
-
+var customerProviders: [() -> String] = []//闭包数组
+func collectCustomerProviders(_ customerProvider: @autoclosure @escaping () -> String) {
+    customerProviders.append(customerProvider)
+}
 
