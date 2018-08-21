@@ -101,7 +101,7 @@ class Player {
 }
 
 class MethodsVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -145,6 +145,7 @@ class MethodsVC: UIViewController {
         } else {
             print("level 6 has not yet been unlocked.")
         }
+        
     }
     
 

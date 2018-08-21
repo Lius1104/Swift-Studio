@@ -12,6 +12,8 @@
 		534A8F562126D2170014815F /* StructureClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534A8F552126D2160014815F /* StructureClassVC.swift */; };
 		5356851A2126610100C5B5D6 /* EnumerationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535685192126610100C5B5D6 /* EnumerationsVC.swift */; };
 		5356ED8C212553A300D16D62 /* ClosuresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356ED8B212553A300D16D62 /* ClosuresVC.swift */; };
+		5375A569212C1013001B22A2 /* SubscriptsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5375A568212C1013001B22A2 /* SubscriptsVC.swift */; };
+		5375A56B212C1B62001B22A2 /* InheritanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5375A56A212C1B62001B22A2 /* InheritanceVC.swift */; };
 		53977AB6212AB07400F85B87 /* MethodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53977AB5212AB07400F85B87 /* MethodsVC.swift */; };
 		53A8E0612112ADDC00F6CE6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8E0602112ADDC00F6CE6A /* AppDelegate.swift */; };
 		53A8E0632112ADDC00F6CE6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8E0622112ADDC00F6CE6A /* ViewController.swift */; };
@@ -69,6 +71,8 @@
 		534A8F552126D2160014815F /* StructureClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureClassVC.swift; sourceTree = "<group>"; };
 		535685192126610100C5B5D6 /* EnumerationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumerationsVC.swift; sourceTree = "<group>"; };
 		5356ED8B212553A300D16D62 /* ClosuresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosuresVC.swift; sourceTree = "<group>"; };
+		5375A568212C1013001B22A2 /* SubscriptsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptsVC.swift; sourceTree = "<group>"; };
+		5375A56A212C1B62001B22A2 /* InheritanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InheritanceVC.swift; sourceTree = "<group>"; };
 		53977AB5212AB07400F85B87 /* MethodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodsVC.swift; sourceTree = "<group>"; };
 		53A8E05D2112ADDC00F6CE6A /* SwiftStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A8E0602112ADDC00F6CE6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 				535685192126610100C5B5D6 /* EnumerationsVC.swift */,
 				534A8F552126D2160014815F /* StructureClassVC.swift */,
 				53977AB5212AB07400F85B87 /* MethodsVC.swift */,
+				5375A568212C1013001B22A2 /* SubscriptsVC.swift */,
+				5375A56A212C1B62001B22A2 /* InheritanceVC.swift */,
 			);
 			path = BasicsSet;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5375A569212C1013001B22A2 /* SubscriptsVC.swift in Sources */,
 				53DB21C32123CBFD00C4E6BC /* ControlFlowVC.swift in Sources */,
 				53DB21C521242B7700C4E6BC /* FunctionsVC.swift in Sources */,
 				53977AB6212AB07400F85B87 /* MethodsVC.swift in Sources */,
@@ -502,6 +509,7 @@
 				53A8E0952112B50000F6CE6A /* AppDelegate.swift in Sources */,
 				530154202118425800D5727B /* BasicsVC.swift in Sources */,
 				530154222119839A00D5727B /* BasicOperatorVC.swift in Sources */,
+				5375A56B212C1B62001B22A2 /* InheritanceVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
