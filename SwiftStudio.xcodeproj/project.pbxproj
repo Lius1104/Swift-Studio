@@ -9,9 +9,15 @@
 /* Begin PBXBuildFile section */
 		530154202118425800D5727B /* BasicsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5301541F2118425800D5727B /* BasicsVC.swift */; };
 		530154222119839A00D5727B /* BasicOperatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530154212119839A00D5727B /* BasicOperatorVC.swift */; };
+		53018149212EA1E000170875 /* OptionalChainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53018148212EA1E000170875 /* OptionalChainingVC.swift */; };
+		5301814B212FA02800170875 /* ErrorHandlingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5301814A212FA02800170875 /* ErrorHandlingVC.swift */; };
+		5301814D212FD45200170875 /* TypeCastingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5301814C212FD45200170875 /* TypeCastingVC.swift */; };
+		5301814F212FED9800170875 /* NestedTypesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5301814E212FED9800170875 /* NestedTypesVC.swift */; };
+		53018151212FF77100170875 /* ExtensionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53018150212FF77100170875 /* ExtensionVC.swift */; };
 		534A8F562126D2170014815F /* StructureClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534A8F552126D2160014815F /* StructureClassVC.swift */; };
 		5356851A2126610100C5B5D6 /* EnumerationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535685192126610100C5B5D6 /* EnumerationsVC.swift */; };
 		5356ED8C212553A300D16D62 /* ClosuresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5356ED8B212553A300D16D62 /* ClosuresVC.swift */; };
+		53586530212D0DC300268D58 /* InitializationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358652F212D0DC300268D58 /* InitializationVC.swift */; };
 		5375A569212C1013001B22A2 /* SubscriptsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5375A568212C1013001B22A2 /* SubscriptsVC.swift */; };
 		5375A56B212C1B62001B22A2 /* InheritanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5375A56A212C1B62001B22A2 /* InheritanceVC.swift */; };
 		53977AB6212AB07400F85B87 /* MethodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53977AB5212AB07400F85B87 /* MethodsVC.swift */; };
@@ -68,9 +74,15 @@
 /* Begin PBXFileReference section */
 		5301541F2118425800D5727B /* BasicsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicsVC.swift; sourceTree = "<group>"; };
 		530154212119839A00D5727B /* BasicOperatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicOperatorVC.swift; sourceTree = "<group>"; };
+		53018148212EA1E000170875 /* OptionalChainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalChainingVC.swift; sourceTree = "<group>"; };
+		5301814A212FA02800170875 /* ErrorHandlingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingVC.swift; sourceTree = "<group>"; };
+		5301814C212FD45200170875 /* TypeCastingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCastingVC.swift; sourceTree = "<group>"; };
+		5301814E212FED9800170875 /* NestedTypesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTypesVC.swift; sourceTree = "<group>"; };
+		53018150212FF77100170875 /* ExtensionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionVC.swift; sourceTree = "<group>"; };
 		534A8F552126D2160014815F /* StructureClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureClassVC.swift; sourceTree = "<group>"; };
 		535685192126610100C5B5D6 /* EnumerationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumerationsVC.swift; sourceTree = "<group>"; };
 		5356ED8B212553A300D16D62 /* ClosuresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosuresVC.swift; sourceTree = "<group>"; };
+		5358652F212D0DC300268D58 /* InitializationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializationVC.swift; sourceTree = "<group>"; };
 		5375A568212C1013001B22A2 /* SubscriptsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptsVC.swift; sourceTree = "<group>"; };
 		5375A56A212C1B62001B22A2 /* InheritanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InheritanceVC.swift; sourceTree = "<group>"; };
 		53977AB5212AB07400F85B87 /* MethodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodsVC.swift; sourceTree = "<group>"; };
@@ -228,6 +240,12 @@
 				53977AB5212AB07400F85B87 /* MethodsVC.swift */,
 				5375A568212C1013001B22A2 /* SubscriptsVC.swift */,
 				5375A56A212C1B62001B22A2 /* InheritanceVC.swift */,
+				5358652F212D0DC300268D58 /* InitializationVC.swift */,
+				53018148212EA1E000170875 /* OptionalChainingVC.swift */,
+				5301814A212FA02800170875 /* ErrorHandlingVC.swift */,
+				5301814C212FD45200170875 /* TypeCastingVC.swift */,
+				5301814E212FED9800170875 /* NestedTypesVC.swift */,
+				53018150212FF77100170875 /* ExtensionVC.swift */,
 			);
 			path = BasicsSet;
 			sourceTree = "<group>";
@@ -498,16 +516,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5375A569212C1013001B22A2 /* SubscriptsVC.swift in Sources */,
+				5301814D212FD45200170875 /* TypeCastingVC.swift in Sources */,
 				53DB21C32123CBFD00C4E6BC /* ControlFlowVC.swift in Sources */,
+				53018149212EA1E000170875 /* OptionalChainingVC.swift in Sources */,
 				53DB21C521242B7700C4E6BC /* FunctionsVC.swift in Sources */,
 				53977AB6212AB07400F85B87 /* MethodsVC.swift in Sources */,
 				53A8E0972112B50000F6CE6A /* ViewController.swift in Sources */,
 				534A8F562126D2170014815F /* StructureClassVC.swift in Sources */,
 				5356851A2126610100C5B5D6 /* EnumerationsVC.swift in Sources */,
+				53018151212FF77100170875 /* ExtensionVC.swift in Sources */,
+				5301814B212FA02800170875 /* ErrorHandlingVC.swift in Sources */,
 				53DB21C12122E0B500C4E6BC /* CollectionTypesVC.swift in Sources */,
+				53586530212D0DC300268D58 /* InitializationVC.swift in Sources */,
 				5356ED8C212553A300D16D62 /* ClosuresVC.swift in Sources */,
 				53A8E0952112B50000F6CE6A /* AppDelegate.swift in Sources */,
 				530154202118425800D5727B /* BasicsVC.swift in Sources */,
+				5301814F212FED9800170875 /* NestedTypesVC.swift in Sources */,
 				530154222119839A00D5727B /* BasicOperatorVC.swift in Sources */,
 				5375A56B212C1B62001B22A2 /* InheritanceVC.swift in Sources */,
 			);
